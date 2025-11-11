@@ -10,13 +10,8 @@ export default function AboutSection() {
       style={{ backgroundColor: "#F8FAF2" }}
     >
       {/* Left photo */}
-      <div className="relative w-64 h-96 md:w-80 md:h-[500px] mb-10 md:mb-0 md:mr-16">
-        <Image
-          src="/images/me.png"
-          alt="Katerina Borisova"
-          fill
-          className="object-cover rounded-2xl shadow-lg"
-        />
+      <div className="relative w-90 h-96 md:w-85 md:h-[500px] mb-10 md:mb-0 md:mr-16">
+        <Image src="/images/me.png" alt="Katerina Borisova" fill />
       </div>
 
       {/* Right text content */}
@@ -50,12 +45,12 @@ export default function AboutSection() {
             <h3 className="font-[Merriweather_Sans] text-2xl font-semibold mb-3">
               Education
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed font-['Merriweather_Sans']">
               <strong>Current Student at Fontys</strong>
               <br />
               Specialization: Information and Communication Technology
             </p>
-            <p className="mt-3 leading-relaxed">
+            <p className="mt-3 leading-relaxed font-['Merriweather_Sans']">
               <strong>Graduated Highschool</strong>
               <br />
               Specialization at Math and Information Technology
