@@ -8,7 +8,7 @@ import AnimatedLetters from "../public/components/AnimatedLetters";
 import ProjectsSection from "../public/components/ProjectsSection";
 import AboutMeSection from "../public/components/AboutSection";
 import ServicePage from "../public/components/Services";
-
+import Playbook from "../public/components/Playbook";
 
 const RoseScene = dynamic(() => import("../public/components/RoseScene"), {
   ssr: false,
@@ -223,7 +223,7 @@ export default function Home() {
       <ProjectsSection />
       <AboutMeSection />
       <ServicePage />
-   
+      <Playbook />
 
       <ContactModal
         isOpen={isContactOpen}
