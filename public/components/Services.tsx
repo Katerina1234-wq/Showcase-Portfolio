@@ -18,7 +18,6 @@ export default function ServicePage() {
 
       const rect = sectionRef.current.getBoundingClientRect();
 
-      // Only move text if section is visible
       if (rect.bottom > 0 && rect.top < window.innerHeight) {
         const currentScrollY = window.scrollY;
         const delta = currentScrollY - lastScrollY.current;
@@ -30,7 +29,6 @@ export default function ServicePage() {
           damping: 20,
         });
 
-        // Reset after user stops scrolling
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
           animate(yText, 0, { type: "spring", stiffness: 90, damping: 20 });

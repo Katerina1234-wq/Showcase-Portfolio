@@ -1,13 +1,34 @@
 "use client";
 
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Html } from "@react-three/drei";
+import { Group } from "three";
 
 function Model() {
   const gltf = useGLTF("/models/rosemodel.glb");
+  const modelRef = useRef<Group>(null!);
+
+  // Animate model
+  useFrame(({ clock }) => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.01;
+
+      // Move up and down
+      modelRef.current.position.y =
+        -0.1 + Math.sin(clock.getElapsedTime()) * 0.1;
+    }
+  });
+
   if (!gltf?.scene) return null;
-  return <primitive object={gltf.scene} scale={1.2} position={[0, -0.2, 0]} />;
+  return (
+    <primitive
+      ref={modelRef}
+      object={gltf.scene}
+      scale={[0.8, 0.8, 0.8]}
+      position={[0, -0.1, 0]}
+    />
+  );
 }
 
 export default function RoseScene() {
@@ -27,7 +48,13 @@ export default function RoseScene() {
         >
           <Model />
         </Suspense>
-        <OrbitControls enableZoom={true} />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          maxPolarAngle={Math.PI / 2.2}
+          minPolarAngle={Math.PI / 2.8}
+          rotateSpeed={0.3}
+        />
       </Canvas>
     </div>
   );

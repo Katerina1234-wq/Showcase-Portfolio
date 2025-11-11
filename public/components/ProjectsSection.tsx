@@ -67,7 +67,6 @@ export default function ProjectsPage() {
           },
         });
 
-        // subtle float effect for image/text inside
         gsap.fromTo(
           items,
           { y: 40, opacity: 0 },
@@ -124,14 +123,13 @@ export default function ProjectsPage() {
         >
           <div className="relative">
             <Image
-              src="/images/project1.png"
+              src="/images/pic1.png"
               alt="3D Models Project"
               width={550}
               height={350}
               className="rounded-lg shadow-xl animate-item"
             />
 
-            {/* Pink circular button bottom-right */}
             <a
               href="https://i549093.hera.fontysict.net/"
               target="_blank"
@@ -184,14 +182,13 @@ export default function ProjectsPage() {
         >
           <div className="relative">
             <Image
-              src="/images/project2.png"
+              src="/images/pic2.png"
               alt="BELCO Project"
               width={550}
               height={350}
               className="rounded-lg shadow-xl animate-item"
             />
 
-            {/* Pink circular button bottom-right */}
             <a
               href="#"
               target="_blank"

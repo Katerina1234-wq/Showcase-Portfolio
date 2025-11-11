@@ -14,7 +14,7 @@ const RoseScene = dynamic(() => import("../public/components/RoseScene"), {
   ssr: false,
 });
 
-// ================= CONTACT MODAL ===================
+// modal form - contact
 function ContactModal({ isOpen, onClose }) {
   return (
     <AnimatePresence>
@@ -32,7 +32,7 @@ function ContactModal({ isOpen, onClose }) {
             exit={{ scale: 0.85, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            {/* Close Button */}
+            {/* close button */}
             <button
               onClick={onClose}
               className="absolute top-3 right-4 text-gray-600 text-3xl hover:text-black"
@@ -40,17 +40,14 @@ function ContactModal({ isOpen, onClose }) {
               ✕
             </button>
 
-            {/* Title */}
             <h2 className="text-5xl font-[MonteCarlo] text-[#802A6E] mb-6">
               Get in Touch
             </h2>
 
-            {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-800 mb-8 font-sans">
               Let’s connect and create something unforgettable!
             </p>
 
-            {/* Links */}
             <div className="flex flex-col gap-6 text-xl md:text-2xl font-sans">
               <a
                 href="mailto:katerina.borisova294@gmail.com"
@@ -82,7 +79,7 @@ function ContactModal({ isOpen, onClose }) {
   );
 }
 
-// ================= MAIN PAGE ===================
+// main page
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
@@ -94,7 +91,7 @@ export default function Home() {
           "linear-gradient(135deg, #FFFCF7 20%, #E391A9 50%, #812064 100%)",
       }}
     >
-      {/* ===== Navigation Bar ===== */}
+      {/* nav bar*/}
       <header
         className="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 h-16 z-50 
                    bg-transparent backdrop-blur-sm transition-all duration-300"
@@ -109,7 +106,10 @@ export default function Home() {
           <a href="#home" className="hover:underline">
             Home
           </a>
-          <a href="#works" className="hover:underline">
+          <a
+            href="/public/components/ProjectsSection.tsx"
+            className="hover:underline"
+          >
             Works
           </a>
           <a href="#about" className="hover:underline">
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ===== Hero Section ===== */}
+      {/* hero section */}
       <section
         className="relative w-full h-screen flex items-center justify-center"
         id="home"
@@ -151,7 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Text Section ===== */}
+      {/* text*/}
       <section className="relative z-30 flex flex-col items-center justify-center text-center px-4 mt-4 md:mt-8 py-10 bg-transparent">
         <h1
           className="text-5xl md:text-7xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"

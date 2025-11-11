@@ -9,12 +9,10 @@ export default function AboutSection() {
       className="relative flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 md:px-20 py-24"
       style={{ backgroundColor: "#F8FAF2" }}
     >
-      {/* Left photo */}
       <div className="relative w-90 h-96 md:w-85 md:h-[500px] mb-10 md:mb-0 md:mr-16">
         <Image src="/images/me.png" alt="Katerina Borisova" fill />
       </div>
 
-      {/* Right text content */}
       <div className="max-w-2xl text-[#3B1C32]">
         {/* About Me */}
         <h2 className="font-[MonteCarlo] text-5xl md:text-6xl text-center mb-6">

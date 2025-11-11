@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 type Props = {
   text: string;
   className?: string;
-  delay?: number; // ms per letter
+  delay?: number;
 };
 
 export default function AnimatedLetters({
@@ -47,7 +47,6 @@ export default function AnimatedLetters({
     const el = containerRef.current;
     if (!el) return;
 
-    // hide letters initially
     el.classList.remove("is-playing");
 
     if (prefersReduced === null) return;
@@ -85,7 +84,7 @@ export default function AnimatedLetters({
             display: "inline-block",
             transformOrigin: "center",
             animationDelay: `${i * delay}ms`,
-            opacity: 0, // hidden by default
+            opacity: 0,
           }}
         >
           {ch === " " ? "\u00A0" : ch}

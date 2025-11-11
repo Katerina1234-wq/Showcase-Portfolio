@@ -5,7 +5,6 @@ import { Great_Vibes, Poppins } from "next/font/google";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
-// Font setup
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
@@ -50,14 +49,12 @@ export default function PlaybookPage() {
     });
   };
 
-  // List of GIFs (make sure they exist in public/gifs/)
   const gifs = [1, 2, 3, 4, 5, 6];
 
   return (
     <main
       className={`relative min-h-screen w-full bg-gradient-to-b from-[#EFA4C8] to-[#A14784] flex flex-col items-center text-center overflow-visible ${greatVibes.variable} ${poppins.variable}`}
     >
-      {/* --- Pink bubbles image (top-left) --- */}
       <div className="absolute top-0 left-0 w-40 h-40">
         <Image
           src="/images/bubbles.png"
@@ -86,7 +83,7 @@ export default function PlaybookPage() {
         </p>
       </section>
 
-      {/* --- Auto-scrolling GIF Cards (1 per card, full cover) --- */}
+      {/* gifs */}
       <section className="w-full overflow-hidden mt-10 py-10">
         <motion.div animate={controls} className="flex gap-5 w-[200%]">
           {gifs.map((n) => (
@@ -98,7 +95,6 @@ export default function PlaybookPage() {
               whileTap={{ scale: 0.95 }}
               onClick={() => alert(`Clicked card ${n}`)}
             >
-              {/* Each GIF fills the entire card */}
               <Image
                 src={`/gifs/gif${n}.gif`}
                 alt={`GIF ${n}`}
@@ -112,7 +108,7 @@ export default function PlaybookPage() {
         </motion.div>
       </section>
 
-      {/* --- SEND AN EMAIL section --- */}
+      {/* send email section*/}
       <section className="relative w-full mt-32 overflow-visible">
         {/* Moving line */}
         <div className="whitespace-nowrap flex animate-marquee">
@@ -122,19 +118,22 @@ export default function PlaybookPage() {
               className="text-white text-[68px] font-extrabold tracking-tight uppercase leading-[1] mx-8 font-[var(--font-poppins)]"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
-              SEND AN EMAIL SEND AN EMAIL SEND AN EMAIL SEND AN EMAIL
+              SEND AN EMAIL SEND AN EMAIL SEND AN EMAIL SEND AN EMAIL SEND AN
+              EMAIL
             </h2>
           ))}
         </div>
 
-        {/* Purple shape */}
-        <div className="absolute right-[20%] bottom-[-90px] w-[200px] h-[200px] flex items-center justify-center animate-slow-spin">
-          <Image
-            src="/images/shape.png"
-            alt="Reach out badge"
-            fill
-            className="object-contain"
-          />
+        {/* Purple shape spinning */}
+        <div className="absolute right-[20%] bottom-[-90px] w-[200px] h-[200px] overflow-visible flex items-center justify-center">
+          <div className="w-full h-full relative animate-slow-spin">
+            <Image
+              src="/images/purpleshape.png"
+              alt="Reach out badge"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </section>
 
