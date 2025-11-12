@@ -104,7 +104,7 @@ export default function Home() {
         {/* navigation links */}
         <nav className="flex gap-6 md:gap-10 text-lg md:text-3xl font-[MonteCarlo]">
           <a href="#home" className="hover:underline">
-            Home
+            Home-
           </a>
           <a
             href="/public/components/ProjectsSection.tsx"
