@@ -18,27 +18,33 @@ export default function AnimatedLetters({
   const [prefersReduced, setPrefersReduced] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Handle SSR or browsers without matchMedia
     if (typeof window === "undefined" || !window.matchMedia) {
       Promise.resolve().then(() => setPrefersReduced(false));
       return;
     }
 
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    // Set initial value
     Promise.resolve().then(() => setPrefersReduced(mq.matches));
 
     const handle = () =>
       Promise.resolve().then(() => setPrefersReduced(mq.matches));
+
+    // Add listener
     try {
-      mq.addEventListener?.("change", handle as EventListener);
+      mq.addEventListener("change", handle);
     } catch {
-      mq.addListener?.(handle as unknown as EventListener);
+      // Fallback for Safari
+      mq.addListener(handle as unknown as EventListener);
     }
 
     return () => {
       try {
-        mq.removeEventListener?.("change", handle as EventListener);
+        mq.removeEventListener("change", handle);
       } catch {
-        mq.removeListener?.(handle as unknown as EventListener);
+        mq.removeListener(handle as unknown as EventListener);
       }
     };
   }, []);
@@ -46,11 +52,11 @@ export default function AnimatedLetters({
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
+    if (prefersReduced === null) return;
 
     el.classList.remove("is-playing");
 
-    if (prefersReduced === null) return;
-
+    // If user prefers reduced motion, skip intersection logic
     if (prefersReduced || typeof IntersectionObserver === "undefined") {
       el.classList.add("is-playing");
       return;
@@ -60,11 +66,15 @@ export default function AnimatedLetters({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // When element enters the viewport
             el.classList.add("is-playing");
+          } else {
+            // Remove to allow replay when scrolling back
+            el.classList.remove("is-playing");
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.3 } // triggers when 30% visible
     );
 
     io.observe(el);

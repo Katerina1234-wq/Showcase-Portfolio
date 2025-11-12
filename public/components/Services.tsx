@@ -1,55 +1,27 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useMotionValue, animate } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ServicePage() {
-  const yText = useMotionValue(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    const clamp = (v: number, min = -200, max = 200) =>
-      Math.max(min, Math.min(max, v));
+  // useScroll gives us a scroll progress (0 to 1) for this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"], // starts moving when section enters viewport
+  });
 
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-
-      if (rect.bottom > 0 && rect.top < window.innerHeight) {
-        const currentScrollY = window.scrollY;
-        const delta = currentScrollY - lastScrollY.current;
-        lastScrollY.current = currentScrollY;
-
-        animate(yText, clamp(yText.get() - delta), {
-          type: "spring",
-          stiffness: 90,
-          damping: 20,
-        });
-
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-          animate(yText, 0, { type: "spring", stiffness: 90, damping: 20 });
-        }, 200);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [yText]);
+  // Map scroll progress → vertical translation in pixels
+  // (you can tweak the range [-200, 200] to control movement)
+  const yText = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
   return (
     <div
       ref={sectionRef}
       className="relative bg-[#F8FAF2] w-screen overflow-x-hidden"
     >
-      {/* Sticky header */}
+      {/* Scroll-reactive header */}
       <motion.div
         style={{ y: yText }}
         className="sticky top-16 left-0 w-full flex justify-between px-8 md:px-32 text-4xl md:text-6xl font-[MonteCarlo] italic text-[#3B1C32] pointer-events-none z-10"
