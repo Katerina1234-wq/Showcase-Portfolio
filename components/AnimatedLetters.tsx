@@ -13,12 +13,11 @@ export default function AnimatedLetters({
   className = "",
   delay = 45,
 }: Props) {
-  const chars = Array.from(text);
+  const chars = Array.from(text ?? "");
   const containerRef = useRef<HTMLSpanElement | null>(null);
   const [prefersReduced, setPrefersReduced] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Handle SSR or browsers without matchMedia
     if (typeof window === "undefined" || !window.matchMedia) {
       Promise.resolve().then(() => setPrefersReduced(false));
       return;
@@ -26,37 +25,30 @@ export default function AnimatedLetters({
 
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    // Set initial value
     Promise.resolve().then(() => setPrefersReduced(mq.matches));
 
-    const handle = () =>
+    const handleChange = () =>
       Promise.resolve().then(() => setPrefersReduced(mq.matches));
 
-    // Add listener
     try {
-      mq.addEventListener("change", handle);
+      mq.addEventListener("change", handleChange);
     } catch {
-      // Fallback for Safari
-      mq.addListener(handle as unknown as EventListener);
+      mq.addListener(handleChange as unknown as EventListener);
     }
 
     return () => {
       try {
-        mq.removeEventListener("change", handle);
+        mq.removeEventListener("change", handleChange);
       } catch {
-        mq.removeListener(handle as unknown as EventListener);
+        mq.removeListener(handleChange as unknown as EventListener);
       }
     };
   }, []);
 
   useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
-    if (prefersReduced === null) return;
+    if (!el || prefersReduced === null) return;
 
-    el.classList.remove("is-playing");
-
-    // If user prefers reduced motion, skip intersection logic
     if (prefersReduced || typeof IntersectionObserver === "undefined") {
       el.classList.add("is-playing");
       return;
@@ -66,15 +58,13 @@ export default function AnimatedLetters({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // When element enters the viewport
             el.classList.add("is-playing");
           } else {
-            // Remove to allow replay when scrolling back
             el.classList.remove("is-playing");
           }
         });
       },
-      { threshold: 0.3 } // triggers when 30% visible
+      { threshold: 0.3 }
     );
 
     io.observe(el);

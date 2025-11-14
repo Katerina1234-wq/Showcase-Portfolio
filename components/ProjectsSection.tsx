@@ -50,7 +50,6 @@ export default function ProjectsPage() {
       sections.forEach((section) => {
         const items = section.querySelectorAll(".animate-item");
 
-        // fade + scale in section
         gsap.set(section, { opacity: 0, scale: 0.9, yPercent: 10 });
         gsap.to(section, {
           opacity: 1,
@@ -93,6 +92,7 @@ export default function ProjectsPage() {
   return (
     <main
       ref={sectionRef}
+      id="works" // <-- ⭐⭐ ADDED FOR NAVIGATION
       className={`relative min-h-screen w-full overflow-hidden bg-[#681950] text-white ${greatVibes.variable} ${playfair.variable} ${montserrat.variable} ${montaga.variable}`}
     >
       {/* Title */}
@@ -190,7 +190,7 @@ export default function ProjectsPage() {
             />
 
             <a
-              href="#"
+              href="https://belcoweb.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute bottom-2 right-2 w-24 h-24 bg-[#F5D4DA] text-black flex items-center justify-center rounded-full font-bold shadow-lg border-4 border-white hover:bg-pink-200 transition text-center px-2"

@@ -4,18 +4,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import AnimatedLetters from "../public/components/AnimatedLetters";
-import ProjectsSection from "../public/components/ProjectsSection";
-import AboutMeSection from "../public/components/AboutSection";
-import ServicePage from "../public/components/Services";
-import Playbook from "../public/components/Playbook";
+import AnimatedLetters from "../components/AnimatedLetters";
+import ProjectsSection from "../components/ProjectsSection";
+import AboutMeSection from "../components/AboutSection";
+import ServicePage from "../components/Services";
+import Playbook from "../components/Playbook";
 
-const RoseScene = dynamic(() => import("../public/components/RoseScene"), {
+const RoseScene = dynamic(() => import("../components/RoseScene"), {
   ssr: false,
 });
 
-// modal form - contact
-function ContactModal({ isOpen, onClose }) {
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ContactModal({ isOpen, onClose }: ContactModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -32,7 +36,6 @@ function ContactModal({ isOpen, onClose }) {
             exit={{ scale: 0.85, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            {/* close button */}
             <button
               onClick={onClose}
               className="absolute top-3 right-4 text-gray-600 text-3xl hover:text-black"
@@ -50,13 +53,13 @@ function ContactModal({ isOpen, onClose }) {
 
             <div className="flex flex-col gap-6 text-xl md:text-2xl font-sans">
               <a
-                href="mailto:katerina.borisova294@gmail.com"
+                href="mailto:549093@student.fontys.nl"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
               >
-                📧 katerina.borisova294@gmail.com
+                📧 k.borisova@student.fontys.nl
               </a>
               <a
-                href="https://www.instagram.com/yourprofile"
+                href="https://www.instagram.com/katerina_borisova___/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
@@ -64,7 +67,7 @@ function ContactModal({ isOpen, onClose }) {
                 📸 Instagram
               </a>
               <a
-                href="https://www.linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/checkpoint/challenge/AgF-igWExQhHmQAAAZqBy69IYpxBSRp_4x3LH4BNrJuVCcuZGsjUP6EE89DpVM9plGC0vA8FkhPolq2wZWul5w-ylbUPAA?ut=0dqauzZHYkoI01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
@@ -79,9 +82,8 @@ function ContactModal({ isOpen, onClose }) {
   );
 }
 
-// main page
 export default function Home() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState<boolean>(false);
 
   return (
     <main
@@ -91,25 +93,19 @@ export default function Home() {
           "linear-gradient(135deg, #FFFCF7 20%, #E391A9 50%, #812064 100%)",
       }}
     >
-      {/* nav bar*/}
       <header
         className="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 h-16 z-50 
                    bg-transparent backdrop-blur-sm transition-all duration-300"
       >
         <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 h-px bg-black" />
 
-        {/* logo */}
         <div className="font-[MonteCarlo] text-5xl">KB</div>
 
-        {/* navigation links */}
         <nav className="flex gap-6 md:gap-10 text-lg md:text-3xl font-[MonteCarlo]">
           <a href="#home" className="hover:underline">
             Home
           </a>
-          <a
-            href="/public/components/ProjectsSection.tsx"
-            className="hover:underline"
-          >
+          <a href="#works" className="hover:underline">
             Works
           </a>
           <a href="#about" className="hover:underline">
@@ -129,7 +125,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* hero section */}
       <section
         className="relative w-full h-screen flex items-center justify-center"
         id="home"
