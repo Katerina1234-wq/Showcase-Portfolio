@@ -4,23 +4,21 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import AnimatedLetters from "../public/components/AnimatedLetters";
-import ProjectsSection from "../public/components/ProjectsSection";
-import AboutMeSection from "../public/components/AboutSection";
-import ServicePage from "../public/components/Services";
-import Playbook from "../public/components/Playbook";
+import AnimatedLetters from "../components/AnimatedLetters";
+import ProjectsSection from "../components/ProjectsSection";
+import AboutMeSection from "../components/AboutSection";
+import ServicePage from "../components/Services";
+import Playbook from "../components/Playbook";
 
-const RoseScene = dynamic(() => import("../public/components/RoseScene"), {
+const RoseScene = dynamic(() => import("../components/RoseScene"), {
   ssr: false,
 });
 
-// ✅ 1. Declare the props interface
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// ✅ 2. Type the component props
 function ContactModal({ isOpen, onClose }: ContactModalProps) {
   return (
     <AnimatePresence>
@@ -55,13 +53,13 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
             <div className="flex flex-col gap-6 text-xl md:text-2xl font-sans">
               <a
-                href="mailto:katerina.borisova294@gmail.com"
+                href="mailto:549093@student.fontys.nl"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
               >
-                📧 katerina.borisova294@gmail.com
+                📧 k.borisova@student.fontys.nl
               </a>
               <a
-                href="https://www.instagram.com/yourprofile"
+                href="https://www.instagram.com/katerina_borisova___/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
@@ -69,7 +67,7 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 📸 Instagram
               </a>
               <a
-                href="https://www.linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/checkpoint/challenge/AgF-igWExQhHmQAAAZqBy69IYpxBSRp_4x3LH4BNrJuVCcuZGsjUP6EE89DpVM9plGC0vA8FkhPolq2wZWul5w-ylbUPAA?ut=0dqauzZHYkoI01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
@@ -84,7 +82,6 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
   );
 }
 
-// ✅ 3. Main page component
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState<boolean>(false);
 
@@ -108,10 +105,7 @@ export default function Home() {
           <a href="#home" className="hover:underline">
             Home
           </a>
-          <a
-            href="/public/components/ProjectsSection.tsx"
-            className="hover:underline"
-          >
+          <a href="#works" className="hover:underline">
             Works
           </a>
           <a href="#about" className="hover:underline">
@@ -131,7 +125,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero + sections */}
       <section
         className="relative w-full h-screen flex items-center justify-center"
         id="home"
@@ -153,15 +146,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Text sections */}
-      {/* ... your text and sections remain unchanged ... */}
+      {/* text*/}
+      <section className="relative z-30 flex flex-col items-center justify-center text-center px-4 mt-4 md:mt-8 py-10 bg-transparent">
+        <h1
+          className="text-5xl md:text-7xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"
+          style={{
+            textShadow:
+              "0.8px 0 currentColor, -0.8px 0 currentColor, 0 0.8px currentColor, 0 -0.8px currentColor",
+          }}
+        >
+          <AnimatedLetters text="CRAFTING" />
+        </h1>
+
+        <p className="text-4xl md:text-5xl italic font-[MonteCarlo] text-[#5A1450] -mt-3">
+          <AnimatedLetters text="designing" delay={40} />
+        </p>
+
+        <h1
+          className="text-6xl md:text-8xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"
+          style={{
+            textShadow:
+              "0.8px 0 currentColor, -0.8px 0 currentColor, 0 0.8px currentColor, 0 -0.8px currentColor",
+          }}
+        >
+          <AnimatedLetters text="UNFORGETABLE" />
+        </h1>
+
+        <p className="text-4xl md:text-5xl italic font-[MonteCarlo] text-[#5A1450] -mt-3">
+          <AnimatedLetters text="premium - luxury" delay={35} />
+        </p>
+
+        <h1
+          className="text-5xl md:text-7xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"
+          style={{
+            textShadow:
+              "0.8px 0 currentColor, -0.8px 0 currentColor, 0 0.8px currentColor, 0 -0.8px currentColor",
+          }}
+        >
+          <AnimatedLetters text="DIGITAL" />
+        </h1>
+
+        <p className="text-3xl md:text-4xl italic font-[MonteCarlo] text-[#5A1450] -mt-2">
+          <AnimatedLetters text="web / mobile" delay={30} />
+        </p>
+
+        <h1
+          className="text-6xl md:text-8xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"
+          style={{
+            textShadow:
+              "0.8px 0 currentColor, -0.8px 0 currentColor, 0 0.8px currentColor, 0 -0.8px currentColor",
+          }}
+        >
+          <AnimatedLetters text="EXPERIENCES" />
+        </h1>
+
+        <p className="text-3xl md:text-4xl italic font-[MonteCarlo] text-[#5A1450] -mt-3">
+          <AnimatedLetters text="brands & websites" delay={30} />
+        </p>
+
+        <h1
+          className="text-6xl md:text-8xl font-black text-[#802A6E] uppercase font-['Merriweather_Sans'] leading-tight"
+          style={{
+            textShadow:
+              "0.8px 0 currentColor, -0.8px 0 currentColor, 0 0.8px currentColor, 0 -0.8px currentColor",
+          }}
+        >
+          <AnimatedLetters text="FOR CLIENTS" />
+        </h1>
+      </section>
 
       <ProjectsSection />
       <AboutMeSection />
       <ServicePage />
       <Playbook />
 
-      {/* ✅ 4. Properly typed modal props */}
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
