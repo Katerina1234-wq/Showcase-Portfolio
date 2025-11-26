@@ -92,7 +92,7 @@ export default function ProjectsPage() {
   return (
     <main
       ref={sectionRef}
-      id="works" // <-- ⭐⭐ ADDED FOR NAVIGATION
+      id="works"
       className={`relative min-h-screen w-full overflow-hidden bg-[#681950] text-white ${greatVibes.variable} ${playfair.variable} ${montserrat.variable} ${montaga.variable}`}
     >
       {/* Title */}
