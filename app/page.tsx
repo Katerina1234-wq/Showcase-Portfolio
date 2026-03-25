@@ -51,23 +51,13 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
               Let’s connect and create something unforgettable!
             </p>
 
-            <div className="flex flex-col gap-6 text-xl md:text-2xl font-sans">
+            <div className="flex flex-col gap-6 text-xl md:text-2xl font-[Merriweather_Sans]">
+              
+                📧 katerina.borisova294@gmail.com
+             
+          
               <a
-                href="mailto:549093@student.fontys.nl"
-                className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
-              >
-                📧 k.borisova@student.fontys.nl
-              </a>
-              <a
-                href="https://www.instagram.com/katerina_borisova___/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
-              >
-                📸 Instagram
-              </a>
-              <a
-                href="https://www.linkedin.com/checkpoint/challenge/AgF-igWExQhHmQAAAZqBy69IYpxBSRp_4x3LH4BNrJuVCcuZGsjUP6EE89DpVM9plGC0vA8FkhPolq2wZWul5w-ylbUPAA?ut=0dqauzZHYkoI01"
+                href="https://www.linkedin.com/in/katerina-borisova-66662229a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#5A1450] font-['Merriweather_Sans'] hover:underline"
@@ -97,7 +87,7 @@ export default function Home() {
         className="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 h-16 z-50 
                    bg-transparent backdrop-blur-sm transition-all duration-300"
       >
-        <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 h-px bg-black" />
+        <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 h-px black" />
 
         <div className="font-[MonteCarlo] text-5xl">KB</div>
 
