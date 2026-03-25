@@ -92,7 +92,7 @@ export default function ProjectsPage() {
   return (
     <main
       ref={sectionRef}
-      id="works" // <-- ⭐⭐ ADDED FOR NAVIGATION
+      id="works"
       className={`relative min-h-screen w-full overflow-hidden bg-[#681950] text-white ${greatVibes.variable} ${playfair.variable} ${montserrat.variable} ${montaga.variable}`}
     >
       {/* Title */}
@@ -167,8 +167,9 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              A collection of interactive 3D objects and product visualizations,
-              crafted with attention to lighting, texture, and form.
+              A 3D portfolio bringing together my previous semester work into a single interactive experience. 
+              I focused on creating visuallly engaging interface using a 3D carousel, combining smooth animations and transitions with Three.js and Framer Motion. 
+              This project reflects my interest in building modern, animated web ewperiences that go beyond static layouts and create a memorable user journey. 
             </p>
           </div>
         </section>
@@ -226,11 +227,74 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              A brand-focused web concept that combines bold typography and
-              minimalist design for clarity and identity.
+              A creative web experience centered around interaction and first impressions. 
+              The highlight of this project is a custom door-opening animation that welcomes users and transitions them into the main website.
+              Built using animation libraries like Three.js and Turn.js, this project ewplores how motion and interaction can enhance storytelling and user engagement. 
             </p>
           </div>
         </section>
+
+  {/* Project 3 */}
+        <section
+          ref={(el: HTMLDivElement | null) => {
+            slidesRef.current[0] = el;
+          }}
+          className="flex flex-col md:flex-row items-center justify-center w-full gap-12 relative"
+        >
+          <div className="relative">
+            <Image
+              src="/images/solarsystem.png"
+              alt="Solar System Project"
+              width={550}
+              height={350}
+              className="rounded-lg shadow-xl animate-item"
+            />
+
+            <a
+              href="https://projectsolarsystemm.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-2 right-2 w-24 h-24 bg-[#F5D4DA] text-black flex items-center justify-center rounded-full font-bold shadow-lg border-4 border-white hover:bg-pink-200 transition text-center px-2"
+              style={{
+                fontFamily: "var(--font-montaga)",
+                fontSize: "0.9rem",
+                transform: "rotate(-45deg)",
+              }}
+            >
+              Visit Website
+            </a>
+          </div>
+
+          <div className="max-w-md text-left animate-item relative">
+            <h3
+              className="text-3xl mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              <span
+                className="italic text-4xl"
+                style={{ fontFamily: "var(--font-greatvibes)" }}
+              >
+                Solar
+              </span>{" "}
+              <span
+                className="font-extrabold"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                System
+              </span>
+            </h3>
+            <p
+              className="text-sm leading-relaxed opacity-90"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              An interactive 3D simulation of the solar system designed to make learning more engaging and visual.
+              I implemented smooth animations and motion GSAP and Framer Motion, focusing on both realism and performance. 
+              This project combines development with design thinking, turning complex concepts into an intuitive and interactive experience. 
+            </p>
+          </div>
+        </section>
+
+      
       </div>
     </main>
   );

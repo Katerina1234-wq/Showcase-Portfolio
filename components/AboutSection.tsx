@@ -33,8 +33,9 @@ export default function AboutSection() {
               Experience
             </h3>
             <ul className="font-['Merriweather_Sans'] text-gray-700 list-disc list-inside leading-relaxed">
-              <li>Figma</li>
-              <li>VS Code - HTML, CSS, JS, React, Next.js</li>
+              <li>Languages: HTML, CSS, JavaScript, Swift, Dart</li>
+              <li>Frameworks and Libraries: React, Next.js, Flutter, Node.js</li>
+              <li>Tools and Technologies: Figma, VS Code, Blender, Xcode, GitHub</li>
               <li>UI/UX Design</li>
             </ul>
           </div>
@@ -51,7 +52,7 @@ export default function AboutSection() {
             <p className="mt-3 leading-relaxed font-['Merriweather_Sans']">
               <strong>Graduated Highschool</strong>
               <br />
-              Specialization at Math and Information Technology
+              Specialization at Mathematics and Information Technology
             </p>
           </div>
         </div>
