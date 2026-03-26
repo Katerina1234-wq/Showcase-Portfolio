@@ -244,7 +244,7 @@ export default function ProjectsPage() {
         {/* Project 3 */}
         <section
           ref={(el: HTMLDivElement | null) => {
-            slidesRef.current[0] = el;
+            slidesRef.current[2] = el;
           }}
           className="flex flex-col md:flex-row items-center justify-center w-full gap-12 relative"
         >
@@ -307,7 +307,7 @@ export default function ProjectsPage() {
         {/* Project 4 */}
         <section
           ref={(el: HTMLDivElement | null) => {
-            slidesRef.current[1] = el;
+            slidesRef.current[3] = el;
           }}
           className="flex flex-col md:flex-row-reverse items-center justify-center w-full gap-12 relative"
         >
@@ -369,7 +369,7 @@ export default function ProjectsPage() {
         {/* Project 4 */}
         <section
           ref={(el: HTMLDivElement | null) => {
-            slidesRef.current[0] = el;
+            slidesRef.current[4] = el;
           }}
           className="flex flex-col md:flex-row items-center justify-center w-full gap-12 relative"
         >
