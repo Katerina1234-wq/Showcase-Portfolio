@@ -43,7 +43,7 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     const sections = slidesRef.current.filter(
-      (s): s is HTMLDivElement => s !== null
+      (s): s is HTMLDivElement => s !== null,
     );
 
     const ctx = gsap.context(() => {
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
               end: "bottom 70%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     }, sectionRef);
@@ -167,9 +167,13 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              A 3D portfolio bringing together my previous semester work into a single interactive experience. 
-              I focused on creating visuallly engaging interface using a 3D carousel, combining smooth animations and transitions with Three.js and Framer Motion. 
-              This project reflects my interest in building modern, animated web ewperiences that go beyond static layouts and create a memorable user journey. 
+              A 3D portfolio bringing together my previous semester work into a
+              single interactive experience. I focused on creating visuallly
+              engaging interface using a 3D carousel, combining smooth
+              animations and transitions with Three.js and Framer Motion. This
+              project reflects my interest in building modern, animated web
+              ewperiences that go beyond static layouts and create a memorable
+              user journey.
             </p>
           </div>
         </section>
@@ -227,14 +231,17 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              A creative web experience centered around interaction and first impressions. 
-              The highlight of this project is a custom door-opening animation that welcomes users and transitions them into the main website.
-              Built using animation libraries like Three.js and Turn.js, this project ewplores how motion and interaction can enhance storytelling and user engagement. 
+              A creative web experience centered around interaction and first
+              impressions. The highlight of this project is a custom
+              door-opening animation that welcomes users and transitions them
+              into the main website. Built using animation libraries like
+              Three.js and Turn.js, this project ewplores how motion and
+              interaction can enhance storytelling and user engagement.
             </p>
           </div>
         </section>
 
-  {/* Project 3 */}
+        {/* Project 3 */}
         <section
           ref={(el: HTMLDivElement | null) => {
             slidesRef.current[0] = el;
@@ -287,14 +294,138 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              An interactive 3D simulation of the solar system designed to make learning more engaging and visual.
-              I implemented smooth animations and motion GSAP and Framer Motion, focusing on both realism and performance. 
-              This project combines development with design thinking, turning complex concepts into an intuitive and interactive experience. 
+              An interactive 3D simulation of the solar system designed to make
+              learning more engaging and visual. I implemented smooth animations
+              and motion GSAP and Framer Motion, focusing on both realism and
+              performance. This project combines development with design
+              thinking, turning complex concepts into an intuitive and
+              interactive experience.
             </p>
           </div>
         </section>
 
-      
+        {/* Project 4 */}
+        <section
+          ref={(el: HTMLDivElement | null) => {
+            slidesRef.current[1] = el;
+          }}
+          className="flex flex-col md:flex-row-reverse items-center justify-center w-full gap-12 relative"
+        >
+          <div className="relative">
+            <Image
+              src="/images/glowproject.png"
+              alt="GLOW Eindhoven Project"
+              width={550}
+              height={350}
+              className="rounded-lg shadow-xl animate-item"
+            />
+
+            <a
+              href="https://github.com/glowoperation/GLOW.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-2 right-2 w-24 h-24 bg-[#F5D4DA] text-black flex items-center justify-center rounded-full font-bold shadow-lg border-4 border-white hover:bg-pink-200 transition text-center px-2"
+              style={{
+                fontFamily: "var(--font-montaga)",
+                fontSize: "0.9rem",
+                transform: "rotate(-45deg)",
+              }}
+            >
+              Visit GitHub
+            </a>
+          </div>
+
+          <div className="max-w-md text-left animate-item relative">
+            <h3
+              className="text-3xl mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              <span
+                className="font-extrabold"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                GLOW Eindhoven Project (In Progress)
+              </span>
+            </h3>
+            <p
+              className="text-sm leading-relaxed opacity-90"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              A mobile application designed for the GLOW light festival, aimed
+              at creating an engaging and interactive experience for children
+              before, during, and after the event. The app guides users through
+              the festival, offering interactive features that extend the
+              experience beyond the physical visit. I am currently developing
+              the application using Flutter, focusing on usability,
+              accessibility, and intuitive design for a younger audience. The
+              project is being developed in a team environment, giving me
+              hands-on experience with collaboration, communication, and
+              real-world mobile app development.
+              <p>Tech Stack: Flutter, Dart, Figma (UI design)</p>
+            </p>
+          </div>
+        </section>
+
+        {/* Project 4 */}
+        <section
+          ref={(el: HTMLDivElement | null) => {
+            slidesRef.current[0] = el;
+          }}
+          className="flex flex-col md:flex-row items-center justify-center w-full gap-12 relative"
+        >
+          <div className="relative">
+            <Image
+              src="/images/aicurriculum.png"
+              alt="Solar System Project"
+              width={550}
+              height={350}
+              className="rounded-lg shadow-xl animate-item"
+            />
+
+            <a
+              href="https://github.com/Katerina1234-wq/AI-Curriculum-project.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-2 right-2 w-24 h-24 bg-[#F5D4DA] text-black flex items-center justify-center rounded-full font-bold shadow-lg border-4 border-white hover:bg-pink-200 transition text-center px-2"
+              style={{
+                fontFamily: "var(--font-montaga)",
+                fontSize: "0.9rem",
+                transform: "rotate(-45deg)",
+              }}
+            >
+              Visit GitHub
+            </a>
+          </div>
+
+          <div className="max-w-md text-left animate-item relative">
+            <h3
+              className="text-3xl mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              <span
+                className="font-extrabold"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                AI Curriculum Project (In progress)
+              </span>
+            </h3>
+            <p
+              className="text-sm leading-relaxed opacity-90"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              A mobile application that uses artificial intelligence to generate
+              personalized learning paths for niche topics. The app is designed
+              to suggest structured curricula, track user progress, and provide
+              an adaptive learning experience tailored to individual goals. I am
+              currently developing the application using Swift, focusing on
+              implementing AI-based functionality, intuitive UI design, and a
+              smooth user experience. This project allows me to explore modern
+              technologies, algorithmic problem-solving, and real-world
+              application development.
+              <p>Tech Stack: Swift, Core ML (AI integration), Xcode</p>
+            </p>
+          </div>
+        </section>
       </div>
     </main>
   );

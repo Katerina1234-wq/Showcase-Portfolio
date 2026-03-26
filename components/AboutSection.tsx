@@ -19,11 +19,15 @@ export default function AboutSection() {
           About Me
         </h2>
         <p className="font-['Merriweather_Sans'] text-base md:text-lg leading-relaxed text-gray-700 mb-10">
-          My name is <strong>Katerina Borisova</strong>. I am 20 years old and
-          currently pursuing my studies at <strong>Fontys University</strong>. I
-          am a motivated and dedicated student with a strong interest in
-          developing both my academic knowledge and practical skills through
-          hands-on experience.
+          My name is <strong>Katerina Borisova</strong>. I am a 20-year-old ICT student focused on
+           front-end development. I enjoy creating clean, user-friendly interfaces and turning 
+           ideas into visual, interactive experiences. Through my studies, I have worked with 
+           front-end technologies and developed a strong eye for layout, usability, and design.
+            I am looking for my first internship where I can contribute to real projects, learn 
+            from experienced designers and developers, and continue growing both my technical 
+            skills and creative approach.
+
+
         </p>
 
         {/* Experience + Education */}
@@ -47,7 +51,7 @@ export default function AboutSection() {
             <p className="leading-relaxed font-['Merriweather_Sans']">
               <strong>Current Student at Fontys</strong>
               <br />
-              Specialization: Information and Communication Technology
+              Specialization: Information and Communication Technology - Front-end Development, Mobile Apps
             </p>
             <p className="mt-3 leading-relaxed font-['Merriweather_Sans']">
               <strong>Graduated Highschool</strong>
