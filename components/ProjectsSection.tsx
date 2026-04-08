@@ -313,7 +313,7 @@ export default function ProjectsPage() {
         >
           <div className="relative">
             <Image
-              src="/images/glowproject.png"
+              src="/images/Group 5.png"
               alt="GLOW Eindhoven Project"
               width={550}
               height={350}
@@ -351,17 +351,16 @@ export default function ProjectsPage() {
               className="text-sm leading-relaxed opacity-90"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              A mobile application designed for the GLOW light festival, aimed
-              at creating an engaging and interactive experience for children
-              before, during, and after the event. The app guides users through
-              the festival, offering interactive features that extend the
-              experience beyond the physical visit. I am currently developing
-              the application using Flutter, focusing on usability,
-              accessibility, and intuitive design for a younger audience. The
-              project is being developed in a team environment, giving me
-              hands-on experience with collaboration, communication, and
-              real-world mobile app development.
-              <p>Tech Stack: Flutter, Dart, Figma (UI design)</p>
+           A mobile application designed for the GLOW Eindhoven light festival, aimed at creating an engaging and interactive 
+           experience for both teachers and students. The app allows teachers to upload students’ work 
+           and automatically generate animations suitable for projection during the event. Teachers 
+           can then share these animations with student accounts as well as with an admin account. 
+           The admin is responsible for reviewing and selecting the best animations for display during
+            the GLOW event.
+
+            This project is being developed collaboratively in a team of four members, combining our skills to design,
+           build, and refine the application.
+              <p>Tech Stack: React and TypeScript (Frontend), Python (Backend), Hetzner cloud server and MYSQL</p>
             </p>
           </div>
         </section>
@@ -375,7 +374,7 @@ export default function ProjectsPage() {
         >
           <div className="relative">
             <Image
-              src="/images/aicurriculum.png"
+              src="/images/Group 3.png"
               alt="Solar System Project"
               width={550}
               height={350}
@@ -383,7 +382,7 @@ export default function ProjectsPage() {
             />
 
             <a
-              href="https://github.com/Katerina1234-wq/AI-Curriculum-project.git"
+              href="https://github.com/Katerina1234-wq/AICurriculum.git"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute bottom-2 right-2 w-24 h-24 bg-[#F5D4DA] text-black flex items-center justify-center rounded-full font-bold shadow-lg border-4 border-white hover:bg-pink-200 transition text-center px-2"
@@ -415,14 +414,13 @@ export default function ProjectsPage() {
             >
               A mobile application that uses artificial intelligence to generate
               personalized learning paths for niche topics. The app is designed
-              to suggest structured curricula, track user progress, and provide
-              an adaptive learning experience tailored to individual goals. I am
+              to create an structured learning experience. I am
               currently developing the application using Swift, focusing on
-              implementing AI-based functionality, intuitive UI design, and a
+              implementing AI API integration, intuitive UI design, and a
               smooth user experience. This project allows me to explore modern
               technologies, algorithmic problem-solving, and real-world
               application development.
-              <p>Tech Stack: Swift, Core ML (AI integration), Xcode</p>
+              <p>Tech Stack: Swift (Frontend), AI Modules (AI integration), Next.js (Backend) </p>
             </p>
           </div>
         </section>
