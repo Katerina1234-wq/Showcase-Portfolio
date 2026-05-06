@@ -6,7 +6,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 export default function ServicePage() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
-    null
+    null,
   );
 
   const { scrollY } = useScroll();
@@ -57,8 +57,8 @@ export default function ServicePage() {
 
         <div className="text-[#802A6E] font-extrabold font-['Merriweather_Sans'] text-5xl md:text-6xl leading-snug space-y-6 text-center">
           <p>3D MODELS</p>
-          <p>WEB DESIGN</p>
-          <p>App–Design</p>
+          <p>WEB & App DESIGN</p>
+          <p>AI INTEGRATION</p>
           <p>FRONT–END</p>
           <p className="flex items-center justify-center gap-2">🌸 ASSETS 🌸</p>
         </div>
