@@ -19,14 +19,12 @@ export default function AboutSection() {
           About Me
         </h2>
         <p className="font-['Merriweather_Sans'] text-base md:text-lg leading-relaxed text-gray-700 mb-10">
-          My name is <strong>Katerina Borisova</strong>. I am a 20-year-old ICT student focused on
-           front-end development. I enjoy creating clean, user-friendly interfaces and turning 
-           ideas into visual, interactive experiences. Through my studies, I have worked with 
-           front-end technologies and developed a strong eye for layout, usability, and design.
-            I am looking for my first internship where I can contribute to real projects, learn 
-            from experienced designers and developers, and continue growing both my technical 
-            skills and creative approach.
-
+          My name is <strong>Katerina Borisova</strong>. I am a 20-year-old ICT student with a 
+          focus on full stack development and a growing interest in AI-driven applications.
+          I enjoy building complete digital experiences with inteligent features. Through my studies and projects, 
+          I have gained experience in modern web technologies, 3D interactive design, and integrating AI functionality 
+          into applications. I have a strong eye for usability, performance, and clean architecture. 
+          
 
         </p>
 
